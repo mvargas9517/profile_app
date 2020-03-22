@@ -35,10 +35,12 @@ class HomePage extends StatelessWidget {
                   transform: Matrix4.rotationY(math.pi),
                     child: Image(image: AssetImage('images/macen.jpeg'), height: _height * 0.4, width: _width* 0.6,))),
             Container(
+              height: _height,
+              width: _width,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [Colors.pink[400].withOpacity(0.9), Colors.orange[800].withOpacity(0.8)])
-        ),),
-            Column(
+        ),
+        child: Column(
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 40),
@@ -86,8 +88,9 @@ class HomePage extends StatelessWidget {
                       )),
                     ],
                   ),
-                  SizedBox(height: _height * 0.01),
-                  Row(
+                  SizedBox(height: 5),
+                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(MaterialIcons.location_on,
@@ -101,19 +104,20 @@ class HomePage extends StatelessWidget {
                         ),),
                     ],
                   ),
+                  SizedBox(height: _height * 0.143),
                 ],
               ),
-              SizedBox(height: _height * 0.15),
               Stack(
                 children: <Widget>[
                   Container(
                     color: Colors.white,
-                    height: _height * 0.6078,
+                    height: _height * 0.6482,
                   ),
                   Positioned(
                     top: -65,
                     right: 38,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget> [
                         Row(
                         children: <Widget>[
@@ -188,7 +192,7 @@ class HomePage extends StatelessWidget {
                                       color: Colors.pink,
                                       fontWeight: FontWeight.bold
                                   ),),
-                                SizedBox(height: 3,),
+                                SizedBox(height: 3),
                                 Text('Followers',
                                   style: TextStyle(
                                       fontSize: 15,
@@ -215,65 +219,58 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: _height* 0.07),
-                     ],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 110,
-                    left: 30,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
+                        SizedBox(height: _height * 0.05),
                         Text('About Macen',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 28,
+                          letterSpacing: 1.2,
                           fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5,
                         )),
-                        SizedBox(height: 13),
-                        Container(
-                          width: _width * 0.535,
-                            child: Text('I\'m a self taught developer and have been mainly using flutter for about 8 months. I like to create'
-                                'user interfaces and designs that peak my interest. Would love to try and make your design so feel free to reach out!',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey,
-                            ),),
-                        ),],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 28,
-                    left: 110,
-                    child: Container(
-                      height: 45.0,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        elevation: 8.0,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
-                        padding: EdgeInsets.all(0.0),
-                        child: Ink(
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(colors: [Colors.pink[400].withOpacity(0.9), Colors.orange[800].withOpacity(0.8)],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                              ),
-                              borderRadius: BorderRadius.circular(30.0)
-                          ),
-                          child: Container(
-                            constraints: BoxConstraints(maxWidth: 200.0, minHeight: 50.0),
-                            alignment: Alignment.center,
-                            child: Text(
-                              "Follow",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                        SizedBox(height: _height * 0.015),
+                       Container(
+                         height: _height * 0.2,
+                         width: _width * 0.43,
+                         child: Text('I\'m a self taught developer and have been coding since 2016. I enjoy making different UIs and designs that peak my interest. Let me know if you need something done!',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500
+                          ),),
+                       ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 65.0),
+                         child: Container(
+  height: 60.0,
+  child: RaisedButton(
+    onPressed: () {},
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+    padding: EdgeInsets.all(0.0),
+    elevation: 10.0,
+    child: Ink(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [Colors.pink[400].withOpacity(0.9), Colors.orange[800].withOpacity(0.8)],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+          ),
+          borderRadius: BorderRadius.circular(30.0)
+      ),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: 220.0, minHeight: 50.0),
+        alignment: Alignment.center,
+        child: Text(
+          "Follow",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+          ),
+        ),
+      ),
+    ),
+  ),
+),
+                       ),
+                     ],
                     ),
                   ),
                 ],
@@ -281,6 +278,8 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+        ),
+            
          ],
       );
   }
