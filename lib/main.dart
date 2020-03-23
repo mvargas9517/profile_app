@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'dart:math' as math;
 
+import 'package:profile_app/profile.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -145,7 +147,14 @@ class HomePage extends StatelessWidget {
                               width: 130,
                               height: 130,
                               child: InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                  MaterialPageRoute(
+                                    builder: (_) => ProfilePage(),
+                                  ),
+                                  );
+                                },
                               ),
                             ),
                           ),
